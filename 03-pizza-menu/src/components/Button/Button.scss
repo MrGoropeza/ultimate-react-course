@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+.app-button {
+  padding: 1rem;
+  background: rgb($primaryColor, 0.8);
+  color: $primaryTextColor;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb($primaryColor, 1);
+  }
+
+  &:focus {
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+      rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  }
+
+  .app-button-link {
+  }
+
+  .app-button-outlined {
+  }
+
+  .app-button-text {
+  }
+}
