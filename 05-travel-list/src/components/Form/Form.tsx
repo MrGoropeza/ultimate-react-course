@@ -33,12 +33,10 @@ const Form = () => {
 
       <select
         value={formState.quantity}
-        onChange={(e) =>
-          setFormState((prev) => ({
-            ...prev,
-            quantity: Number(e.target.value),
-          }))
-        }
+        onChange={(e) => {
+          const quantity = Number(e.target.value);
+          setFormState((prev) => ({ ...prev, quantity }));
+        }}
       >
         {Array.from({ length: 20 }, (_, i) => i + 1).map((opt) => (
           <option key={opt} value={opt}>
