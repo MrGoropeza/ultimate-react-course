@@ -1,0 +1,7 @@
+.item {
+  .item-text {
+    &[data-state="packed"] {
+      text-decoration: line-through;
+    }
+  }
+}
