@@ -1,0 +1,21 @@
+.container {
+  padding: 25rem;
+}
+
+.bill-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .bill-total {
+    font-size: 2rem;
+    text-align: end;
+  }
+
+  .bill-reset {
+    align-self: flex-end;
+    max-width: 5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+}
