@@ -1,29 +1,26 @@
 import "./Form.scss";
 
 import { FormEvent, useState } from "react";
-import { Task } from "../../lib/models";
+import { Item } from "../../lib/models";
 
 type FormValues = {
   quantity: number;
   description: string;
 };
 
-const Form = () => {
-  const initialState: FormValues = { quantity: 0, description: "" };
+const initialState: FormValues = { quantity: 1, description: "" };
 
+type Props = { onAddItem: (item: Item) => void };
+
+const Form = ({ onAddItem }: Props) => {
   const [formState, setFormState] = useState<FormValues>(initialState);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const newItem: Task = {
-      id: Date.now(),
-      packed: false,
-      ...formState,
-    };
+    const newItem: Item = { id: Date.now(), packed: false, ...formState };
 
-    console.log("New item:", newItem);
-
+    onAddItem(newItem);
     setFormState(initialState);
   };
 

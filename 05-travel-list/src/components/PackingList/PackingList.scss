@@ -9,13 +9,21 @@
   gap: 3.2rem;
   align-items: center;
 
-  .actions button,
-  select {
-    text-transform: uppercase;
-    padding: 0.8rem 2.4rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0.8rem;
+  .actions {
+    button,
+    select {
+      text-transform: uppercase;
+      padding: 0.8rem 2.4rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0.8rem;
+
+      &:disabled {
+        cursor: default;
+        background: gray;
+        color: whitesmoke;
+      }
+    }
   }
 
   ul {

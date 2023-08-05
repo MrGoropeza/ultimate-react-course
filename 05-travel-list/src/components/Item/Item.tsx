@@ -1,10 +1,25 @@
 import "./Item.scss";
 
-import { Task } from "../../lib/models";
+import { Item } from "../../lib/models";
 
-const Item = ({ item }: { item: Task }) => {
+type Props = {
+  item: Item;
+  onRemoveItem: (id: number) => void;
+  onUpdateItem: (item: Item) => void;
+};
+
+const Item = ({ item, onRemoveItem, onUpdateItem }: Props) => {
   return (
     <li className="item">
+      <input
+        type="checkbox"
+        checked={item.packed}
+        onChange={(e) => {
+          const updatedItem: Item = { ...item, packed: e.target.checked };
+          onUpdateItem(updatedItem);
+        }}
+      />
+
       <span
         className="item-text"
         data-state={item.packed ? "packed" : undefined}
@@ -12,7 +27,9 @@ const Item = ({ item }: { item: Task }) => {
         {item.quantity} {item.description}
       </span>
 
-      <button type="button">❌</button>
+      <button type="button" onClick={() => onRemoveItem(item.id)}>
+        ❌
+      </button>
     </li>
   );
 };
